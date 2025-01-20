@@ -1,6 +1,12 @@
 {
   "name": "my-qwik-basic-starter",
   "description": "Demo app with sample routes",
+  "version": "0.0.1",
+  "author": {
+    "name": "Kermout Ayoub",
+    "email": "ayoub.kermout08@gmail.com"
+  },
+  "main": "./dist-electron/main.js",
   "engines": {
     "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
   },
@@ -15,6 +21,7 @@
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "vite build -c adapters/static/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
     "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
@@ -24,6 +31,7 @@
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
+    "build:electron": "qwik build && electron-builder",
     "qwik": "qwik"
   },
   "devDependencies": {
@@ -33,12 +41,17 @@
     "@types/node": "20.14.11",
     "@typescript-eslint/eslint-plugin": "7.16.1",
     "@typescript-eslint/parser": "7.16.1",
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8",
+    "electron-serve": "^2.1.1",
     "eslint": "8.57.0",
     "eslint-plugin-qwik": "^1.12.0",
     "prettier": "3.3.3",
     "typescript": "5.4.5",
     "undici": "*",
     "vite": "5.3.5",
+    "vite-plugin-electron": "^0.29.0",
+    "vite-plugin-electron-renderer": "^0.14.6",
     "vite-tsconfig-paths": "^4.2.1"
   }
 }
