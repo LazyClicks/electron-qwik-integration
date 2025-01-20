@@ -3,6 +3,8 @@
 /lib
 /lib-types
 /server
+/dist-electron
+/release
 
 # Development
 node_modules
